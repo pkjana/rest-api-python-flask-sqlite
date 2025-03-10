@@ -41,7 +41,7 @@ $Env:FLASK_DEBUG=1
 $ export FLASK_ENV = development
 $Env:FLASK_ENV = development  //for powersell
 
-#Since version 2.3.0, Flask has replaced FLASK_ENV=development with FLASK_DEBUG=1
+### Since version 2.3.0, Flask has replaced FLASK_ENV=development with FLASK_DEBUG=1
 $ export FLASK_DEBUG=1 
 $Env:FLASK_DEBUG=1
 
@@ -53,20 +53,35 @@ First add db model class to application
 db creation  
 ctrl+c to exit from devlopment server console
 $ python3
+
 >>> from application import db
+
 To create a table 
+
 >>> db.create_all()
+
 >>> from application import Employee
+
 >>> employee = Employee(name="Rama", department="Sales")
+
 >>> employee  # display the employee data
+
 >>> db.session.add(employee)
+
 >>> db.session.commit()
+
 >>> Employee.query.all()  # display data from Employee db
+
 to add another record to Employee db
+
 >>> db.session.add(Employee(name="Cherry", department="HR"))
+
 >>> db.session.commit()
+
 >>> Employee.query.all()
+
 exit and go back to flask
+
 >>> exit()
 
 $ flask run
